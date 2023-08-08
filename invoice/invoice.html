@@ -1,0 +1,65 @@
+<style>
+    .invoice-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .invoice-table th, .invoice-table td {
+        padding: 8px;
+        border-bottom: 1px solid #ccc;
+    }
+</style>
+
+<table class="invoice-table">
+    <tr>
+        <th colspan="2">Dear <span style="color: blue;">{{ my_name }}</span>,</th>
+    </tr>
+    <tr>
+        <th>
+            Thank you {{my_name}}; for choosing our hostel booking service. We are delighted to inform you that we have received your reservation request. Your details have been successfully recorded.
+        </th>
+    </tr>
+    <tr>
+        <th colspan="2">Here are the details of your reservation:</th>
+    </tr>
+    <tr>
+        <td>Date:</td>
+        <td><span style="color: green;">{{ today_date }}</span></td>
+    </tr>
+    <tr>
+        <td>Name:</td>
+        <td><span style="color: purple;">{{ my_name }}</span></td>
+    </tr>
+    <tr>
+        <td>Country/ZIP:</td>
+        <td><span style="color: orange;">{{ country_zip }}</span></td>
+    </tr>
+    <tr>
+        <td>Check-in:</td>
+        <td><span style="color: blue;">{{ checkin }}</span></td>
+    </tr>
+    <tr>
+        <td>Check-out:</td>
+        <td><span style="color: blue;">{{ checkout }}</span></td>
+    </tr>
+    <tr>
+        <td>Rooms:</td>
+        <td><span style="color: red;">{{ rooms }}</span></td>
+    </tr>
+    <tr>
+        <td>Adults:</td>
+        <td><span style="color: red;">{{ adults }}</span></td>
+    </tr>
+    <tr>
+        <td>Children:</td>
+        <td><span style="color: red;">{{ children }}</span></td>
+    </tr>
+    <tr>
+        <td>Email:</td>
+        <td><span style="color: purple;">{{ email }}</span></td>
+    </tr>
+    <tr>
+        <td>Phone Number:</td>
+        <td><span style="color: orange;">{{ phonenumber }}</span></td>
+    </tr>
+</table>
