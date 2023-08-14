@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block title %}Select Location{% endblock title %}
+{% load static %}
+{% block links %}rel="stylesheet" href="{% static 'styles.css' %}"{% endblock links %}
+
+{% block body %}
+<div class="container text-center mt-3">
+  <div class="row">
+    <div class="col mb-3">
+      <div class="card m-3" style="width: 18rem;">
+        <img src="{% static 'images/gallery4.jpg'%}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Dreamers' Den Hostel</h5>
+          <p class="card-text">Price : ₹1299</p>
+          <a href="booknow/" class="btn btn-primary">Book Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card m-3" style="width: 18rem;">
+        <img src="{% static 'images/gallery1.jpg'%}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">The Backpacker's Haven</h5>
+          <p class="card-text">Price : ₹999</p>
+          <a href="booknow/" class="btn btn-primary">Book Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card m-3" style="width: 18rem;">
+        <img src="{% static 'images/home-slide1.jpg'%}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Wanderstay Hostel</h5>
+          <p class="card-text">Price : ₹1399</p>
+          <a href="booknow/" class="btn btn-primary">Book Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card m-3" style="width: 18rem;">
+        <img src="{% static 'images/gallery6.jpg'%}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">The Social Hub Hostel</h5>
+          <p class="card-text">Price : ₹1999</p>
+          <a href="booknow/" class="btn btn-primary">Book Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="col m-3">
+      <div class="card m-3" style="width: 18rem;">
+        <img src="{% static 'images/home-slide3.jpg'%}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">The Traveler's Rest</h5>
+          <p class="card-text">Price : ₹1899</p>
+          <a href="booknow/" class="btn btn-primary">Book Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card m-3" style="width: 18rem;">
+        <img src="{% static 'images/home-slide2.jpg'%}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Adventure Base Hostel</h5>
+          <p class="card-text">Price : ₹1599</p>
+          <a href="booknow/" class="btn btn-primary">Book Now</a>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>  
+{% endblock body %}

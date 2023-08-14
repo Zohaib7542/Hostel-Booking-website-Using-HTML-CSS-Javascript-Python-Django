@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% block title %}Booknow{% endblock title %}
+{% load static %}
+    {% block links %}rel="stylesheet" href="{% static 'styles.css' %}"{% endblock links %}
+{% block body %}
+<form method="post" action="/booknow/">
+  {% csrf_token %}
+  <div id="booking" class="section">
+    <div class="section-center">
+      <div class="container">
+        <div class="row">
+          <div class="booking-form">
+            <div class="form-header"><h1>Make your reservation</h1></div>
+              <div class="form-group">
+                <input
+                  id="name"
+                  name="name"
+                  class="form-control"
+                  type="text"
+                  placeholder="Name"
+                />
+                <span class="form-label">Name</span>
+              </div>
+              <div class="form-group">
+                <select 
+                  id="country_zip"
+                  name="country_zip"
+                  class="form-control"
+                  type="text"
+                  placeholder="Country, ZIP, city..."
+                  aria-label="Default select example">
+                  <option selected>Select Location</option>
+                  {% for item in data %}
+                  <option value="{{ item.Location }}">{{ item.Location }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input class="form-control" id="checkin" name="checkin" type="date" required />
+                    <span class="form-label">Check In</span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input class="form-control" id="checkout" name="checkout" type="date" required />
+                    <span class="form-label">Check out</span>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <select class="form-control" name="rooms" required>
+                      <option value="" selected hidden>Number of rooms</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                    </select>
+                    <span class="select-arrow"></span>
+                    <span class="form-label">Rooms</span>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <select class="form-control" name="adults" required>
+                      <option value="" selected hidden>Number of adults</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                    </select>
+                    <span class="select-arrow"></span>
+                    <span class="form-label">Adults</span>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <select class="form-control" name="children" required>
+                      <option value="" selected hidden>Number of children</option>
+                      <option>0</option>
+                      <option>1</option>
+                      <option>2</option>
+                    </select>
+                    <span class="select-arrow"></span>
+                    <span class="form-label">Children</span>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input
+                      class="form-control"
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="Enter your Email"
+                    />
+                    <span class="form-label">Email</span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input
+                      class="form-control"
+                      type="tel"
+                      id="phonenumber"
+                      name="phonenumber"
+                      placeholder="Enter your Phone"
+                    />
+                    <span class="form-label">Phone</span>
+                  </div>
+                </div>
+              </div>
+              <div class="form-btn">
+                <button class="submit-btn">Book Now</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+
+<script>
+  // Add an event listener to the form submission
+  document.getElementById("booking-form").addEventListener("submit", function(event) {
+    // Prevent the default form submission behavior
+    event.preventDefault();
+
+    // Hide the form
+    document.getElementById("booking").style.display = "none";
+
+    // Show the notification
+    document.getElementById("notification").style.display = "block";
+  });
+</script>
+{% endblock body %}
