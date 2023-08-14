@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Hotel Website</title>
+   {% load static %}
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+   <!-- swiper js cdn link -->
+    <!-- custom css link -->
+   <link rel="stylesheet"  href="{% static 'style.css' %}">
+</head>
+<body>
+
+   <!-- header -->
+
+   <header class="header">
+
+      <a href="#" class="logo"> <i class="fas fa-hotel"></i>HostelHive</a>
+
+      <nav class="navbar">
+         <a href="#home">home</a>
+         <a href="#about">about</a>
+         <a href="#gallery">gallery</a>
+         <a href="#review">review</a>
+         <a href="#faq">faq</a>
+         {% comment %} <a href="location/" class="btn"> book now</a> {% endcomment %}
+         <select id="citySelect" onchange="openCityPage()" class="form-select btn" aria-label="Default select example">
+            <option selected>Select Location</option>
+            {% for item in data %}
+            <option value="{{ item.Location }}">{{ item.Location }}</option>
+            {% endfor %}
+        </select>
+         
+      </nav>
+
+      <div id="menu-btn" class="fas fa-bars"></div>
+
+   </header>
+
+   <!-- end -->
+
+   <!-- home -->
+
+   <section class="home" id="home">
+
+      <div class="swiper home-slider">
+
+         <div class="swiper-wrapper">
+
+            <div class="swiper-slide slide" style="background: url({% static 'images/home-slide2.jpg'%}) no-repeat;">
+               <div class="content">
+                  <h3>Experience the world on a budget</h3>
+                  <a href="booknow/" class="btn"> Book Now</a>
+               </div>
+            </div>
+
+            <div class="swiper-slide slide" style="background: url({% static 'images/home-slide1.jpg'%}) no-repeat;">
+               <div class="content">
+                  <h3>Stay, explore, connect</h3>
+                  <a href="booknow/" class="btn"> Book Now</a>
+               </div>
+            </div>
+
+            <div class="swiper-slide slide" style="background: url({% static 'images/home-slide3.jpg'%}) no-repeat;">
+               <div class="content">
+                  <h3>Stay at our budget-friendly hostels</h3>
+                  <a href="booknow/" class="btn"> Book Now</a>
+               </div>
+            </div>
+
+            <div class="swiper-slide slide" style="background: url({% static 'images/home-slide4.jpg'%}) no-repeat;">
+               <div class="content">
+                  <h3>it's where dreams come true</h3>
+                  <a href="booknow/" class="btn"> Book Now</a>
+               </div>
+            </div>
+
+         </div>
+
+         <div class="swiper-button-next"></div>
+         <div class="swiper-button-prev"></div>
+
+      </div>
+
+   </section>
+
+   <!-- end -->
+   <!-- about -->
+
+   <section class="about" id="about">
+
+      <div class="row">
+
+         <div class="image">
+            <img src="{% static 'images/about.jpg'%}" alt="">
+         </div>
+
+         <div class="content">
+            <h3>about us</h3>
+            <p>Welcome to HostelHive!<br>
+
+At HostelHive, we believe that traveling is not just about the destination, but the experience. Our mission is to provide a comfortable and memorable stay for travelers from all walks of life. We are more than just a place to rest your head; we are a community where connections are made and lifelong memories are created.
+
+As avid travelers ourselves, we understand the importance of finding a welcoming and vibrant atmosphere wherever you go. That's why we set out to create a hostel that embodies the spirit of exploration and fosters a sense of belongin. Whether you're a solo adventurer, a group of friends, or a family, our hostel provides a range of accommodations to suit your needs. From cozy private rooms to dormitories, we have designed our spaces to ensure comfort, privacy, and a good night's sleep.
+
+Our hostel is more than just a place to stay; it's a hub for socializing and connecting with fellow travelers. Our spacious common areas are designed to facilitate interactions, whether it's swapping travel stories, playing games, or simply relaxing with a cup of coffee. We believe that the best memories are made when people come together, and our friendly and knowledgeable staff are always available to offer recommendations and assistance, ensuring that your stay is both enjoyable and hassle-free.
+
+We are committed to sustainability and minimizing our ecological footprint.<br>
+
+Safe travels,
+
+
+
+
+
+
+
+</p>
+         </div>
+
+      </div>
+
+   </section>
+
+   <!-- end -->
+
+
+
+        
+              
+               
+   {% comment %} services {% endcomment %}
+
+   <section class="services">
+
+      <div class="box-container">
+
+         <div class="box">
+            <img src="{% static 'images/service1.png'%}" alt="">
+            <h3>swimming pool</h3>
+         </div>
+
+         <div class="box">
+            <img src="{% static 'images/service2.png'%}" alt="">
+            <h3>food & drink</h3>
+         </div>
+
+         <div class="box">
+            <img src="{% static 'images/service3.png'%}" alt="">
+            <h3>restaurant</h3>
+         </div>
+
+         <div class="box">
+            <img src="{% static 'images/service4.png'%}" alt="">
+            <h3>fitness</h3>
+         </div>
+
+         <div class="box">
+            <img src="{% static 'images/service5.png'%}" alt="">
+            <h3>beauty spa</h3>
+         </div>
+
+         <div class="box">
+            <img src="{% static 'images/service6.png'%}" alt="">
+            <h3>resort beach</h3>
+         </div>
+
+      </div>
+
+   </section>
+
+   <!-- end -->
+
+   <!-- gallery -->
+
+   <section class="gallery" id="gallery">
+
+      <h1 class="heading">our gallery</h1>
+
+      <div class="swiper gallery-slider">
+
+         <div class="swiper-wrapper">
+
+            <div class="swiper-slide slide">
+               <img src="{% static 'images/gallery1.jpg'%}" alt="">
+               <div class="icon">
+                  <i class="fas fa-magnifying-glass-plus"></i>
+               </div>
+            </div>
+
+            <div class="swiper-slide slide">
+               <img src="{% static 'images/gallery2.jpg'%}" alt="">
+               <div class="icon">
+                  <i class="fas fa-magnifying-glass-plus"></i>
+               </div>
+            </div>
+
+            <div class="swiper-slide slide">
+               <img src="{% static 'images/gallery3.jpg'%}" alt="">
+               <div class="icon">
+                  <i class="fas fa-magnifying-glass-plus"></i>
+               </div>
+            </div>
+
+            <div class="swiper-slide slide">
+               <img src="{% static 'images/gallery4.jpg'%}" alt="">
+               <div class="icon">
+                  <i class="fas fa-magnifying-glass-plus"></i>
+               </div>
+            </div>
+
+            <div class="swiper-slide slide">
+               <img src="{% static 'images/gallery5.jpg'%}" alt="">
+               <div class="icon">
+                  <i class="fas fa-magnifying-glass-plus"></i>
+               </div>
+            </div>
+
+            <div class="swiper-slide slide">
+               <img src="{% static 'images/gallery6.jpg'%}" alt="">
+               <div class="icon">
+                  <i class="fas fa-magnifying-glass-plus"></i>
+               </div>
+            </div>
+
+         </div>
+
+      </div>
+
+   </section>
+
+   <!-- end -->
+
+   <!-- review -->
+
+   <section class="review" id="review">
+
+      <div class="swiper review-slider">
+         <div class="swiper-wrapper">
+
+            <div class="swiper-slide slide">
+               <h2 class="heading">client's review</h2>
+               <i class="fas fa-quote-right"></i>
+               <p>"I've been using this hostel booking website for all my travels, and I couldn't be happier with the experience. The website is user-friendly, making it easy to search for hostels and compare prices</p>
+               
+               <div class="user">
+                  <img src="{% static 'images/pic-1.png'%}" alt="">
+                  <div class="user-info">
+                     <h3>Harry</h3>
+                     <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="swiper-slide slide">
+               <h2 class="heading">client's review</h2>
+               <i class="fas fa-quote-right"></i>
+               <p>"I've been using this hostel booking website for all my travels, and I couldn't be happier with the experience. The website is user-friendly, making it easy to search for hostels and compare prices.  Highly recommended!"</p>
+               <div class="user">
+                  <img src="{% static 'images/pic-2.png'%}" alt="">
+                  <div class="user-info">
+                     <h3>Zoe</h3>
+                     <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="swiper-slide slide">
+               <h2 class="heading">client's review</h2>
+               <i class="fas fa-quote-right"></i>
+               <p>"This hostel booking website has become my go-to platform for all my backpacking adventures. The website provides detailed information about each hostel, including photos, amenities, and reviews. It has made my trip planning so much easier and enjoyable!</p>
+               <div class="user">
+                  <img src="{% static 'images/pic-3.png'%}" alt="">
+                  <div class="user-info">
+                     <h3>Murtuza</h3>
+                     <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="swiper-slide slide">
+               <h2 class="heading">client's review</h2>
+               <i class="fas fa-quote-right"></i>
+               <p>"I've been using this hostel booking website for years, and it never disappoints. The website's interface is clean and intuitive, making it a breeze to navigate and book hostels."</p>
+               <div class="user">
+                  <img src="{% static 'images/pic-4.png'%}" alt="">
+                  <div class="user-info">
+                     <h3>Sarah</h3>
+                     <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="swiper-slide slide">
+               <h2 class="heading">client's review</h2>
+               <i class="fas fa-quote-right"></i>
+               <p>"I love how this hostel booking website fosters a sense of community among travelers. The reviews and ratings from fellow guests have been incredibly helpful in guiding my decisions. Thanks to this website, I've had some of the best hostel stays of my life!"</p>
+               <div class="user">
+                  <img src="{% static 'images/pic-5.png'%}" alt="">
+                  <div class="user-info">
+                     <h3>john deo</h3>
+                     <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="swiper-slide slide">
+               <h2 class="heading">client's review</h2>
+               <i class="fas fa-quote-right"></i>
+               <p> The reviews from fellow travelers have been invaluable in finding the best hostels that match my preferences. It has made my trip planning so much easier and enjoyable!"</p>
+               <div class="user">
+                  <img src="{% static 'images/pic-6.png'%}" alt="">
+                  <div class="user-info">
+                     <h3>Suzuka</h3>
+                     <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+         </div>
+         <div class="swiper-pagination"></div>
+      </div>
+
+   </section>
+
+   <!-- end -->
+
+   <!-- faq -->
+
+   <section class="faqs" id="faq">
+
+      <h1 class="heading">frequently asked questions</h1>
+
+      <div class="row">
+
+         <div class="image">
+            <img src="{% static 'images/FAQs.gif'%}" alt="">
+         </div>
+
+         <div class="content">
+
+            <div class="box active">
+               <h3>What payment methods are accepted for booking hostels?</h3>
+               <p>We accept all credit cards, such as Visa, Mastercard, and American Express. Some websites may also offer additional payment options like PhonePay or bank transfers.</p>
+            </div>
+
+            <div class="box">
+               <h3>Can I leave a review or rating for the hostel after my stay?</h3>
+               <p>After your stay, you can typically leave a review on the website or through a follow-up email sent by the booking platform.</p>
+            </div>
+
+            <div class="box">
+               <h3>Is breakfast included in the booking?</h3>
+               <p>Yes,English Breakfast!</p>
+            </div>
+
+            <div class="box">
+               <h3>Can I make changes to my booking, such as modifying dates or canceling a reservation?<h3>
+               <p>The ability to make changes or cancellations depends on the specific hostel booking website and the terms and conditions of the hostel you booked.</p>
+            </div>
+
+            <div class="box">
+               <h3>Are there any additional fees or taxes that I should be aware of?</h3>
+               <p>Additional fees and taxes vary by location and the specific policies of the hostel. Some hostels may charge city taxes or require a refundable deposit for key cards or damages.</p>
+            </div>
+
+         </div>
+
+      </div>
+
+   </section>
+
+   <!-- end -->
+   <!-- footer -->
+
+   <section class="footer">
+
+      <div class="box-container">
+
+         <div class="box">
+            <h3>contact info</h3>
+            <a href="#"> <i class="fas fa-phone"></i>+91 9882368273</a>
+            <a href="#"> <i class="fas fa-phone"></i> +91 8379826398</a>
+            <a href="#"> <i class="fas fa-envelope"></i>hostelhive00@gmail.com</a>
+            <a href="#"> <i class="fas fa-map"></i> Hydrabad , India</a>
+         </div>
+
+         <div class="box">
+            <h3>quick links</h3>
+            <a href="#"> <i class="fas fa-arrow-right"></i> home</a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> about</a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> rooms</a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> gallery</a>
+            <a href="booknow/"> <i class="fas fa-arrow-right"></i> reservation</a>
+         </div>
+      </div>
+
+      <div class="share">
+         <a href="#" class="fab fa-facebook-f"></a>
+         <a href="https://www.instagram.com/_.hostelhives._/" class="fab fa-instagram"></a>
+         <a href="https://twitter.com" class="fab fa-twitter"></a>
+         <a href="#" class="fab fa-pinterest"></a>
+      </div>
+
+      <div class="credit">&copy; copyright @ 2023 by <span>Murtuza,Zohaib & Surya</span></div>
+
+   </section>
+
+   <!-- end -->
+   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+   <script src="{% static 'script.js'%}"></script>
+   <script>
+      function openCityPage() {
+         var city = document.getElementById("citySelect").value;
+         if(city != "Select Location"){
+            window.open("location/");
+         }
+       }
+       
+   </script>
+</body>
+</html>
